@@ -1,0 +1,6 @@
+{
+  "name": "CopaBR - Leilão de Figurinhas da Copa",
+  "description": "Marketplace de leilões exclusivos para figurinhas da Copa do Mundo. Colecione, venda, dê lances e complete seu álbum.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

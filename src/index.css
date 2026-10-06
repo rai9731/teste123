@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #000000;
+    color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(18, 18, 20, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+.glass-panel-subtle {
+  background: rgba(18, 18, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-emerald {
+  background: linear-gradient(135deg, rgba(0, 224, 84, 0.08), rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 224, 84, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 224, 84, 0.12);
+}
+
+.glass-panel-gold {
+  /* mapped strictly to modern emerald & black glass */
+  background: linear-gradient(135deg, rgba(0, 224, 84, 0.08), rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 224, 84, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 224, 84, 0.12);
+}
+
+.glass-input {
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: rgba(18, 18, 22, 0.95);
+  border-color: #00E054;
+  box-shadow: 0 0 0 2px rgba(0, 224, 84, 0.25);
+  outline: none;
+}
+
+/* Holographic shimmer for special/legendary stickers - black & electric emerald */
+.holo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.12) 30%,
+    rgba(0, 224, 84, 0.35) 45%,
+    rgba(16, 185, 129, 0.25) 55%,
+    rgba(255, 255, 255, 0.15) 70%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: holoSweep 6s infinite linear;
+}
+
+@keyframes holoSweep {
+  0% { transform: translateY(-70%) rotate(25deg); }
+  50% { transform: translateY(0%) rotate(25deg); }
+  100% { transform: translateY(70%) rotate(25deg); }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00E054;
+}
